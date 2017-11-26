@@ -1,0 +1,398 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+-exclude	Makefile	/^	tar -czvf $(USER).tgz --exclude=.gitkeep --exclude=.*.sw? --exclude=*~ LICENSE README Makefile sys bin crt libc include $(ROOTFS) $(USER)-data.img$/;"	m
+AHCI_DEV_PM	include/sys/ahci.h	18;"	d
+AHCI_DEV_SATA	include/sys/ahci.h	15;"	d
+AHCI_DEV_SATAPI	include/sys/ahci.h	16;"	d
+AHCI_DEV_SEMB	include/sys/ahci.h	17;"	d
+AR	Makefile	/^AR=ar$/;"	m
+ATA_STATUS_BSY	include/sys/ahci.h	25;"	d
+ATA_STATUS_DF	include/sys/ahci.h	23;"	d
+ATA_STATUS_DRQ	include/sys/ahci.h	21;"	d
+ATA_STATUS_ERR	include/sys/ahci.h	20;"	d
+ATA_STATUS_RDY	include/sys/ahci.h	24;"	d
+ATA_STATUS_SRV	include/sys/ahci.h	22;"	d
+BINS	Makefile	/^BINS:=$(addprefix $(ROOTFS)\/,$(wildcard bin\/*))$/;"	m
+BIN_SRCS	Makefile	/^BIN_SRCS:=$(wildcard bin\/*\/*.c)$/;"	m
+C	sys/gdt.c	9;"	d	file:
+CC	Makefile	/^CC=gcc$/;"	m
+CFLAGS	Makefile	/^CFLAGS=-O1 -std=c99 -Wall -Werror -fPIC -march=amdfam10 -g3 -Wno-deprecated-declarations -D_XOPEN_SOURCE=600$/;"	m
+CFLAGS_FULL	Makefile	/^CFLAGS_FULL=-nostdinc -Iinclude -msoft-float -mno-sse -mno-red-zone -fno-builtin -fno-stack-protector$/;"	m
+CMD_CD	bin/sbush/sbush.c	11;"	d	file:
+CMD_CWD	bin/sbush/sbush.c	12;"	d	file:
+CMD_EXIT	bin/sbush/sbush.c	14;"	d	file:
+CMD_FIS_DEV_LBA	include/sys/ahci.h	28;"	d
+CMD_LS	bin/sbush/sbush.c	13;"	d	file:
+CMD_UNKNOWN	bin/sbush/sbush.c	10;"	d	file:
+D	sys/gdt.c	16;"	d	file:
+DIR	include/dirent.h	/^typedef struct DIR DIR;$/;"	t	typeref:struct:DIR
+DPL0	sys/gdt.c	10;"	d	file:
+DPL1	sys/gdt.c	11;"	d	file:
+DPL2	sys/gdt.c	12;"	d	file:
+DPL3	sys/gdt.c	13;"	d	file:
+EI_NIDENT	include/sys/elf64.h	4;"	d
+EOF	include/stdio.h	/^static const int EOF = -1;$/;"	v
+Elf64_Ehdr	include/sys/elf64.h	/^} Elf64_Ehdr;$/;"	t	typeref:struct:__anon1
+Elf64_Phdr	include/sys/elf64.h	/^} Elf64_Phdr;$/;"	t	typeref:struct:__anon2
+FIS_TYPE_BIST	include/sys/ahci.h	/^  FIS_TYPE_BIST = 0x58,      \/\/ BIST activate FIS - bidirectional$/;"	e	enum:__anon3
+FIS_TYPE_DATA	include/sys/ahci.h	/^  FIS_TYPE_DATA = 0x46,      \/\/ Data FIS - bidirectional$/;"	e	enum:__anon3
+FIS_TYPE_DEV_BITS	include/sys/ahci.h	/^  FIS_TYPE_DEV_BITS = 0xA1,  \/\/ Set device bits FIS - device to host$/;"	e	enum:__anon3
+FIS_TYPE_DMA_ACT	include/sys/ahci.h	/^  FIS_TYPE_DMA_ACT = 0x39,   \/\/ DMA activate FIS - device to host$/;"	e	enum:__anon3
+FIS_TYPE_DMA_SETUP	include/sys/ahci.h	/^  FIS_TYPE_DMA_SETUP = 0x41, \/\/ DMA setup FIS - bidirectional$/;"	e	enum:__anon3
+FIS_TYPE_PIO_SETUP	include/sys/ahci.h	/^  FIS_TYPE_PIO_SETUP = 0x5F, \/\/ PIO setup FIS - device to host$/;"	e	enum:__anon3
+FIS_TYPE_REG_D2H	include/sys/ahci.h	/^  FIS_TYPE_REG_D2H = 0x34,   \/\/ Register FIS - device to host$/;"	e	enum:__anon3
+FIS_TYPE_REG_H2D	include/sys/ahci.h	/^  FIS_TYPE_REG_H2D = 0x27,   \/\/ Register FIS - host to device$/;"	e	enum:__anon3
+GDT_CS	sys/gdt.c	6;"	d	file:
+GDT_DS	sys/gdt.c	7;"	d	file:
+HBA_GHC_AE	include/sys/ahci.h	4;"	d
+HBA_GHC_HR	include/sys/ahci.h	6;"	d
+HBA_GHC_IE	include/sys/ahci.h	5;"	d
+HBA_PxCMD_CLO	include/sys/ahci.h	9;"	d
+HBA_PxCMD_CR	include/sys/ahci.h	12;"	d
+HBA_PxCMD_FR	include/sys/ahci.h	11;"	d
+HBA_PxCMD_FRE	include/sys/ahci.h	10;"	d
+HBA_PxCMD_ST	include/sys/ahci.h	8;"	d
+HBA_PxIS_TFES	include/sys/ahci.h	13;"	d
+INITIAL_STACK_SIZE	sys/main.c	7;"	d	file:
+KERN_SRCS	Makefile	/^KERN_SRCS:=$(wildcard sys\/*.c sys\/*.s sys\/*\/*.c sys\/*\/*.s)$/;"	m
+L	sys/gdt.c	15;"	d	file:
+LD	Makefile	/^LD=ld$/;"	m
+LDLAGS	Makefile	/^LDLAGS=-nostdlib$/;"	m
+LD_SRCS	Makefile	/^LD_SRCS:=$(wildcard ld\/*.c)$/;"	m
+LIBC_SRCS	Makefile	/^LIBC_SRCS:=$(wildcard libc\/*.c libc\/*.s libc\/*\/*.c libc\/*\/*.s)$/;"	m
+MAX_CMD_SLOT_CNT	include/sys/ahci.h	30;"	d
+MAX_GDT	sys/gdt.c	19;"	d	file:
+MAX_PORT_CNT	include/sys/ahci.h	31;"	d
+NAME_MAX	include/dirent.h	4;"	d
+NULL	include/sys/defs.h	4;"	d
+P	sys/gdt.c	14;"	d	file:
+ROOTBIN	Makefile	/^ROOTBIN=$(ROOTFS)\/bin$/;"	m
+ROOTBOOT	Makefile	/^ROOTBOOT=$(ROOTFS)\/boot$/;"	m
+ROOTFS	Makefile	/^ROOTFS=rootfs$/;"	m
+ROOTLIB	Makefile	/^ROOTLIB=$(ROOTFS)\/lib$/;"	m
+SUBMITTO	Makefile	/^SUBMITTO=\/submit$/;"	m
+W	sys/gdt.c	17;"	d	file:
+_AHCI_H	include/sys/ahci.h	2;"	d
+_DEFS_H	include/sys/defs.h	2;"	d
+_DIRENT_H	include/dirent.h	2;"	d
+_ELF64_H	include/sys/elf64.h	2;"	d
+_GDT_H	include/sys/gdt.h	2;"	d
+_GNU_SOURCE	bin/sbush/sbush.c	1;"	d	file:
+_SIGNAL_H	include/signal.h	2;"	d
+_STDARG_H	include/stdarg.h	2;"	d
+_STDIO_H	include/stdio.h	2;"	d
+_STDLIB_H	include/stdlib.h	2;"	d
+_TARFS_H	include/sys/tarfs.h	2;"	d
+_UNISTD_H	include/unistd.h	2;"	d
+__KPRINTF_H	include/sys/kprintf.h	2;"	d
+_start	crt/crt1.c	/^void _start(void) {$/;"	f
+_x86_64_asm_lgdt	sys/gdt.s	/^_x86_64_asm_lgdt:$/;"	l
+_x86_64_asm_ltr	sys/gdt.s	/^_x86_64_asm_ltr:$/;"	l
+a	include/sys/ahci.h	/^  uint8_t a:1;               \/\/ ATAPI$/;"	m	struct:__anon12
+a	include/sys/ahci.h	/^  uint8_t a:1;               \/\/ Auto-activate. Specifies if DMA Activate FIS is needed$/;"	m	struct:__anon7
+acmd	include/sys/ahci.h	/^  uint8_t acmd[16];          \/\/ ATAPI command, 12 or 16 bytes$/;"	m	struct:__anon11
+addr	sys/gdt.c	/^  uint64_t addr;$/;"	m	struct:gdtr_t	file:
+argv	bin/sbush/sbush.c	/^  char *argv[50];$/;"	m	struct:command	file:
+aux	include/sys/ahci.h	/^  uint16_t aux;$/;"	m	struct:__anon4
+b	include/sys/ahci.h	/^  uint8_t b:1;               \/\/ BIST$/;"	m	struct:__anon12
+bohc	include/sys/ahci.h	/^  uint32_t bohc;             \/\/ 0x28, BIOS\/OS handoff control and status$/;"	m	struct:__anon16
+boot	sys/main.c	/^void boot(void)$/;"	f
+buf_id	include/sys/ahci.h	/^  uint64_t buf_id;           \/\/ DMA Buffer Identifier.$/;"	m	struct:__anon7
+buf_offset	include/sys/ahci.h	/^  uint32_t buf_offset;       \/\/ Byte offset into buffer. First 2 bits must be 0$/;"	m	struct:__anon7
+build_argv	bin/sbush/sbush.c	/^void build_argv(char *input, char *arg, char *argv[]) {$/;"	f
+c	include/sys/ahci.h	/^  uint8_t c:1;               \/\/ 1: Command, 0: Control$/;"	m	struct:__anon4
+c	include/sys/ahci.h	/^  uint8_t c:1;               \/\/ Clear busy upon R_OK$/;"	m	struct:__anon12
+cap	include/sys/ahci.h	/^  uint32_t cap;              \/\/ 0x00, Host capability$/;"	m	struct:__anon16
+cap2	include/sys/ahci.h	/^  uint32_t cap2;             \/\/ 0x24, Host capabilities extended$/;"	m	struct:__anon16
+ccc_ctl	include/sys/ahci.h	/^  uint32_t ccc_ctl;          \/\/ 0x14, Command completion coalescing control$/;"	m	struct:__anon16
+ccc_pts	include/sys/ahci.h	/^  uint32_t ccc_pts;          \/\/ 0x18, Command completion coalescing ports$/;"	m	struct:__anon16
+cfis	include/sys/ahci.h	/^  uint8_t cfis[64];          \/\/ Command FIS$/;"	m	struct:__anon11
+cfl	include/sys/ahci.h	/^  uint8_t cfl:5;             \/\/ Command FIS length in DWORDS, 2 ~ 16$/;"	m	struct:__anon12
+check_if_path_cmd	bin/sbush/sbush.c	/^int check_if_path_cmd(char *cmd) {$/;"	f
+check_if_ps1_cmd	bin/sbush/sbush.c	/^int check_if_ps1_cmd(char *cmd) {$/;"	f
+check_if_ps1_cmd	bin/sbush/sbush.c	/^int check_if_ps1_cmd(char *cmd_arg) {$/;"	f
+checksum	include/sys/tarfs.h	/^  char checksum[8];$/;"	m	struct:posix_header_ustar
+ci	include/sys/ahci.h	/^  uint32_t ci;               \/\/ 0x38, command issue$/;"	m	struct:__anon15
+clb	include/sys/ahci.h	/^  uint64_t clb;              \/\/ 0x00, command list base address, 1K-byte aligned$/;"	m	struct:__anon15
+cmd	include/sys/ahci.h	/^  uint32_t cmd;              \/\/ 0x18, command and status$/;"	m	struct:__anon15
+command	bin/sbush/sbush.c	/^struct command$/;"	s	file:
+command	include/sys/ahci.h	/^  uint8_t command;           \/\/ Command register$/;"	m	struct:__anon4
+control	include/sys/ahci.h	/^  uint8_t control;           \/\/ Control register$/;"	m	struct:__anon4
+count	include/sys/ahci.h	/^  uint16_t count;            \/\/ Count register$/;"	m	struct:__anon4
+count	include/sys/ahci.h	/^  uint16_t count;            \/\/ Count register$/;"	m	struct:__anon5
+count	include/sys/ahci.h	/^  uint16_t count;            \/\/ Count register$/;"	m	struct:__anon8
+ctba	include/sys/ahci.h	/^  uint64_t ctba;             \/\/ Command table descriptor base address$/;"	m	struct:__anon12
+d	include/sys/ahci.h	/^  uint8_t d:1;               \/\/ Data transfer direction, 1 - device to host$/;"	m	struct:__anon7
+d	include/sys/ahci.h	/^  uint8_t d:1;               \/\/ Data transfer direction, 1 - device to host$/;"	m	struct:__anon8
+d_name	include/dirent.h	/^ char d_name[NAME_MAX+1];$/;"	m	struct:dirent
+data	include/sys/ahci.h	/^  uint32_t data[1];          \/\/ Payload$/;"	m	struct:__anon9
+dba	include/sys/ahci.h	/^  uint64_t dba;              \/\/ Data base address$/;"	m	struct:__anon10
+dbc	include/sys/ahci.h	/^  uint32_t dbc:22;           \/\/ Byte count, 4M max$/;"	m	struct:__anon10
+device	include/sys/ahci.h	/^  uint8_t device;            \/\/ Device register$/;"	m	struct:__anon4
+device	include/sys/ahci.h	/^  uint8_t device;            \/\/ Device register$/;"	m	struct:__anon5
+device	include/sys/ahci.h	/^  uint8_t device;            \/\/ Device register$/;"	m	struct:__anon8
+devmajor	include/sys/tarfs.h	/^  char devmajor[8];$/;"	m	struct:posix_header_ustar
+devminor	include/sys/tarfs.h	/^  char devminor[8];$/;"	m	struct:posix_header_ustar
+dirent	include/dirent.h	/^struct dirent {$/;"	s
+dsfis	include/sys/ahci.h	/^  fis_dma_setup_t dsfis;     \/\/ DMA Setup FIS$/;"	m	struct:__anon13
+e_ehsize	include/sys/elf64.h	/^  Elf64_Half    e_ehsize;$/;"	m	struct:__anon1
+e_entry	include/sys/elf64.h	/^  Elf64_Addr    e_entry;$/;"	m	struct:__anon1
+e_flags	include/sys/elf64.h	/^  Elf64_Word    e_flags;$/;"	m	struct:__anon1
+e_ident	include/sys/elf64.h	/^  unsigned char e_ident[EI_NIDENT];$/;"	m	struct:__anon1
+e_machine	include/sys/elf64.h	/^  Elf64_Half    e_machine;$/;"	m	struct:__anon1
+e_phentsize	include/sys/elf64.h	/^  Elf64_Half    e_phentsize;$/;"	m	struct:__anon1
+e_phnum	include/sys/elf64.h	/^  Elf64_Half    e_phnum;$/;"	m	struct:__anon1
+e_phoff	include/sys/elf64.h	/^  Elf64_Off     e_phoff;$/;"	m	struct:__anon1
+e_shentsize	include/sys/elf64.h	/^  Elf64_Half    e_shentsize;$/;"	m	struct:__anon1
+e_shnum	include/sys/elf64.h	/^  Elf64_Half    e_shnum;$/;"	m	struct:__anon1
+e_shoff	include/sys/elf64.h	/^  Elf64_Off     e_shoff;$/;"	m	struct:__anon1
+e_shstrndx	include/sys/elf64.h	/^  Elf64_Half    e_shstrndx;$/;"	m	struct:__anon1
+e_status	include/sys/ahci.h	/^  uint8_t e_status;          \/\/ New value of status register$/;"	m	struct:__anon8
+e_type	include/sys/elf64.h	/^  Elf64_Half    e_type;$/;"	m	struct:__anon1
+e_version	include/sys/elf64.h	/^  Elf64_Word    e_version;$/;"	m	struct:__anon1
+em_ctl	include/sys/ahci.h	/^  uint32_t em_ctl;           \/\/ 0x20, Enclosure management control$/;"	m	struct:__anon16
+em_loc	include/sys/ahci.h	/^  uint32_t em_loc;           \/\/ 0x1C, Enclosure management location$/;"	m	struct:__anon16
+error	include/sys/ahci.h	/^  uint8_t error;             \/\/ Error register$/;"	m	struct:__anon5
+error	include/sys/ahci.h	/^  uint8_t error;             \/\/ Error register$/;"	m	struct:__anon8
+error	include/sys/ahci.h	/^  uint8_t error;$/;"	m	struct:__anon6
+execute_command_line	bin/sbush/sbush.c	/^void execute_command_line(char *cmd) {$/;"	f
+execute_commands	bin/sbush/sbush.c	/^void execute_commands(char *cmd, char *cmd_arg) {$/;"	f
+execute_non_builtin	bin/sbush/sbush.c	/^void execute_non_builtin(char *cmd, char *cmd_arg) {$/;"	f
+fb	include/sys/ahci.h	/^  uint64_t fb;               \/\/ 0x08, FIS base address, 256-byte aligned$/;"	m	struct:__anon15
+fbs	include/sys/ahci.h	/^  uint32_t fbs;              \/\/ 0x40, FIS-based switch control$/;"	m	struct:__anon15
+featureh	include/sys/ahci.h	/^  uint8_t featureh;          \/\/ Feature register, 15:8$/;"	m	struct:__anon4
+featurel	include/sys/ahci.h	/^  uint8_t featurel;          \/\/ Feature register, 7:0$/;"	m	struct:__anon4
+fis_data_t	include/sys/ahci.h	/^}__attribute__((__packed__)) fis_data_t;$/;"	t	typeref:struct:__anon9
+fis_dev_bits_t	include/sys/ahci.h	/^}__attribute__((__packed__)) fis_dev_bits_t;$/;"	t	typeref:struct:__anon6
+fis_dma_setup_t	include/sys/ahci.h	/^}__attribute__((__packed__)) fis_dma_setup_t;$/;"	t	typeref:struct:__anon7
+fis_pio_setup_t	include/sys/ahci.h	/^}__attribute__((__packed__)) fis_pio_setup_t;$/;"	t	typeref:struct:__anon8
+fis_reg_d2h_t	include/sys/ahci.h	/^}__attribute__((__packed__)) fis_reg_d2h_t;$/;"	t	typeref:struct:__anon5
+fis_reg_h2d_t	include/sys/ahci.h	/^}__attribute__((__packed__)) fis_reg_h2d_t;$/;"	t	typeref:struct:__anon4
+fis_type	include/sys/ahci.h	/^  uint8_t fis_type;          \/\/ FIS_TYPE_DATA$/;"	m	struct:__anon9
+fis_type	include/sys/ahci.h	/^  uint8_t fis_type;          \/\/ FIS_TYPE_DEV_BITS$/;"	m	struct:__anon6
+fis_type	include/sys/ahci.h	/^  uint8_t fis_type;          \/\/ FIS_TYPE_DMA_SETUP$/;"	m	struct:__anon7
+fis_type	include/sys/ahci.h	/^  uint8_t fis_type;          \/\/ FIS_TYPE_PIO_SETUP$/;"	m	struct:__anon8
+fis_type	include/sys/ahci.h	/^  uint8_t fis_type;          \/\/ FIS_TYPE_REG_D2H$/;"	m	struct:__anon5
+fis_type	include/sys/ahci.h	/^  uint8_t fis_type;          \/\/ FIS_TYPE_REG_H2D$/;"	m	struct:__anon4
+fis_type_t	include/sys/ahci.h	/^} fis_type_t;$/;"	t	typeref:enum:__anon3
+fork_pipes	bin/sbush/sbush.c	/^int fork_pipes (int n, struct command *cmd) {$/;"	f
+gdt	sys/gdt.c	/^static uint64_t gdt[MAX_GDT] = {$/;"	v	file:
+gdtr	sys/gdt.c	/^static struct gdtr_t gdtr = { sizeof(gdt), (uint64_t)gdt };$/;"	v	typeref:struct:gdtr_t	file:
+gdtr_t	sys/gdt.c	/^struct gdtr_t {$/;"	s	file:
+get_command	bin/sbush/sbush.c	/^int get_command(char *cmd) {$/;"	f
+get_path_string	bin/sbush/sbush.c	/^void get_path_string(char *cmd, char *path_value) {$/;"	f
+ghc	include/sys/ahci.h	/^  uint32_t ghc;              \/\/ 0x04, Global host control$/;"	m	struct:__anon16
+gid	include/sys/tarfs.h	/^  char gid[8];$/;"	m	struct:posix_header_ustar
+gname	include/sys/tarfs.h	/^  char gname[32];$/;"	m	struct:posix_header_ustar
+handle_cd	bin/sbush/sbush.c	/^void handle_cd(char *path) {$/;"	f
+handle_cwd	bin/sbush/sbush.c	/^void handle_cwd() {$/;"	f
+handle_ls	bin/sbush/sbush.c	/^void handle_ls() {$/;"	f
+handle_piped_commands	bin/sbush/sbush.c	/^void handle_piped_commands(char *arg) {$/;"	f
+hba_cmd_header_t	include/sys/ahci.h	/^}__attribute__((__packed__)) hba_cmd_header_t;$/;"	t	typeref:struct:__anon12
+hba_cmd_list_t	include/sys/ahci.h	/^}__attribute__((__packed__))__attribute__((aligned(1024))) hba_cmd_list_t;$/;"	t	typeref:struct:__anon14
+hba_cmd_tbl_t	include/sys/ahci.h	/^}__attribute__((__packed__)) __attribute__((aligned(128))) hba_cmd_tbl_t;$/;"	t	typeref:struct:__anon11
+hba_fis_t	include/sys/ahci.h	/^}__attribute__((__packed__)) __attribute__((aligned(256))) hba_fis_t;$/;"	t	typeref:struct:__anon13
+hba_mem_t	include/sys/ahci.h	/^}__attribute__((__packed__)) hba_mem_t;$/;"	t	typeref:struct:__anon16
+hba_port_t	include/sys/ahci.h	/^}__attribute__((__packed__)) hba_port_t;$/;"	t	typeref:struct:__anon15
+hba_prdt_entry_t	include/sys/ahci.h	/^}__attribute__((__packed__)) hba_prdt_entry_t;$/;"	t	typeref:struct:__anon10
+headers	include/sys/ahci.h	/^  hba_cmd_header_t headers[MAX_CMD_SLOT_CNT];$/;"	m	struct:__anon14
+i	include/sys/ahci.h	/^  uint32_t i:1;              \/\/ Interrupt on completion$/;"	m	struct:__anon10
+i	include/sys/ahci.h	/^  uint8_t i:1;               \/\/ Interrupt bit$/;"	m	struct:__anon5
+i	include/sys/ahci.h	/^  uint8_t i:1;               \/\/ Interrupt bit$/;"	m	struct:__anon6
+i	include/sys/ahci.h	/^  uint8_t i:1;               \/\/ Interrupt bit$/;"	m	struct:__anon7
+i	include/sys/ahci.h	/^  uint8_t i:1;               \/\/ Interrupt bit$/;"	m	struct:__anon8
+icc	include/sys/ahci.h	/^  uint8_t icc;               \/\/ Isochronous command completion$/;"	m	struct:__anon4
+ie	include/sys/ahci.h	/^  uint32_t ie;               \/\/ 0x14, interrupt enable$/;"	m	struct:__anon15
+init_gdt	sys/gdt.c	/^void init_gdt() {$/;"	f
+initial_stack	sys/main.c	/^uint8_t initial_stack[INITIAL_STACK_SIZE]__attribute__((aligned(16)));$/;"	v
+int16_t	include/sys/defs.h	/^typedef          short  int16_t;$/;"	t
+int32_t	include/sys/defs.h	/^typedef          int    int32_t;$/;"	t
+int64_t	include/sys/defs.h	/^typedef          long   int64_t;$/;"	t
+int8_t	include/sys/defs.h	/^typedef          char    int8_t;$/;"	t
+iomap_base	sys/gdt.c	/^  uint16_t iomap_base;$/;"	m	struct:tss_t	file:
+is_rwc	include/sys/ahci.h	/^  uint32_t is_rwc;           \/\/ 0x08, Interrupt status$/;"	m	struct:__anon16
+is_rwc	include/sys/ahci.h	/^  uint32_t is_rwc;           \/\/ 0x10, interrupt status$/;"	m	struct:__anon15
+ist1	sys/gdt.c	/^  void *ist1;$/;"	m	struct:tss_t	file:
+ist2	sys/gdt.c	/^  void *ist2;$/;"	m	struct:tss_t	file:
+ist3	sys/gdt.c	/^  void *ist3;$/;"	m	struct:tss_t	file:
+ist4	sys/gdt.c	/^  void *ist4;$/;"	m	struct:tss_t	file:
+ist5	sys/gdt.c	/^  void *ist5;$/;"	m	struct:tss_t	file:
+ist6	sys/gdt.c	/^  void *ist6;$/;"	m	struct:tss_t	file:
+ist7	sys/gdt.c	/^  void *ist7;$/;"	m	struct:tss_t	file:
+kprintf	sys/kprintf.c	/^void kprintf(const char *fmt, ...)$/;"	f
+lba0	include/sys/ahci.h	/^  uint8_t lba0;              \/\/ LBA low register, 7:0$/;"	m	struct:__anon4
+lba0	include/sys/ahci.h	/^  uint8_t lba0;              \/\/ LBA low register, 7:0$/;"	m	struct:__anon5
+lba0	include/sys/ahci.h	/^  uint8_t lba0;              \/\/ LBA low register, 7:0$/;"	m	struct:__anon8
+lba1	include/sys/ahci.h	/^  uint8_t lba1;              \/\/ LBA mid register, 15:8$/;"	m	struct:__anon4
+lba1	include/sys/ahci.h	/^  uint8_t lba1;              \/\/ LBA mid register, 15:8$/;"	m	struct:__anon5
+lba1	include/sys/ahci.h	/^  uint8_t lba1;              \/\/ LBA mid register, 15:8$/;"	m	struct:__anon8
+lba2	include/sys/ahci.h	/^  uint8_t lba2;              \/\/ LBA high register, 23:16$/;"	m	struct:__anon4
+lba2	include/sys/ahci.h	/^  uint8_t lba2;              \/\/ LBA high register, 23:16$/;"	m	struct:__anon5
+lba2	include/sys/ahci.h	/^  uint8_t lba2;              \/\/ LBA high register, 23:16$/;"	m	struct:__anon8
+lba3	include/sys/ahci.h	/^  uint8_t lba3;              \/\/ LBA register, 31:24$/;"	m	struct:__anon4
+lba3	include/sys/ahci.h	/^  uint8_t lba3;              \/\/ LBA register, 31:24$/;"	m	struct:__anon5
+lba3	include/sys/ahci.h	/^  uint8_t lba3;              \/\/ LBA register, 31:24$/;"	m	struct:__anon8
+lba4	include/sys/ahci.h	/^  uint8_t lba4;              \/\/ LBA register, 39:32$/;"	m	struct:__anon4
+lba4	include/sys/ahci.h	/^  uint8_t lba4;              \/\/ LBA register, 39:32$/;"	m	struct:__anon5
+lba4	include/sys/ahci.h	/^  uint8_t lba4;              \/\/ LBA register, 39:32$/;"	m	struct:__anon8
+lba5	include/sys/ahci.h	/^  uint8_t lba5;              \/\/ LBA register, 47:40$/;"	m	struct:__anon4
+lba5	include/sys/ahci.h	/^  uint8_t lba5;              \/\/ LBA register, 47:40$/;"	m	struct:__anon5
+lba5	include/sys/ahci.h	/^  uint8_t lba5;              \/\/ LBA register, 47:40$/;"	m	struct:__anon8
+linkname	include/sys/tarfs.h	/^  char linkname[100];$/;"	m	struct:posix_header_ustar
+loader_stack	sys/main.c	/^uint32_t* loader_stack;$/;"	v
+m_strcpy	bin/sbush/sbush.c	/^char *m_strcpy(char *dest, char *src) {$/;"	f
+m_strncpy	bin/sbush/sbush.c	/^char *m_strncpy(char *dest, char *src, int len) {$/;"	f
+magic	include/sys/tarfs.h	/^  char magic[6];$/;"	m	struct:posix_header_ustar
+main	bin/sbush/sbush.c	/^int main(int argc, char *argv[], char *envp[]) {$/;"	f
+mode	include/sys/tarfs.h	/^  char mode[8];$/;"	m	struct:posix_header_ustar
+mtime	include/sys/tarfs.h	/^  char mtime[12];$/;"	m	struct:posix_header_ustar
+my_memset	bin/sbush/sbush.c	/^void *my_memset(void *dest, int ch, size_t num_bytes) {$/;"	f
+my_strcpy	bin/sbush/sbush.c	/^void my_strcpy(char *dst, const char *src) {$/;"	f
+my_strlen	bin/sbush/sbush.c	/^int my_strlen(char *str) {$/;"	f
+my_strstr	bin/sbush/sbush.c	/^char *my_strstr(char *str1, char *str2) {$/;"	f
+my_strtok_r	bin/sbush/sbush.c	/^char *my_strtok_r(char *str, const char *delim, char **nextp) {$/;"	f
+n	include/sys/ahci.h	/^  uint8_t n:1;               \/\/ Notification bit$/;"	m	struct:__anon6
+name	include/sys/tarfs.h	/^  char name[100];$/;"	m	struct:posix_header_ustar
+off_t	include/sys/defs.h	/^typedef uint64_t off_t;$/;"	t
+p	include/sys/ahci.h	/^  uint8_t p:1;               \/\/ Prefetchable$/;"	m	struct:__anon12
+p_align	include/sys/elf64.h	/^  Elf64_Xword   p_align;$/;"	m	struct:__anon2
+p_filesz	include/sys/elf64.h	/^  Elf64_Xword   p_filesz;$/;"	m	struct:__anon2
+p_flags	include/sys/elf64.h	/^  Elf64_Word    p_flags;$/;"	m	struct:__anon2
+p_memsz	include/sys/elf64.h	/^  Elf64_Xword   p_memsz;$/;"	m	struct:__anon2
+p_offset	include/sys/elf64.h	/^  Elf64_Off     p_offset;$/;"	m	struct:__anon2
+p_paddr	include/sys/elf64.h	/^  Elf64_Addr    p_paddr;$/;"	m	struct:__anon2
+p_type	include/sys/elf64.h	/^  Elf64_Word    p_type;$/;"	m	struct:__anon2
+p_vaddr	include/sys/elf64.h	/^  Elf64_Addr    p_vaddr;$/;"	m	struct:__anon2
+pad	include/sys/tarfs.h	/^  char pad[12];$/;"	m	struct:posix_header_ustar
+pad0	include/sys/ahci.h	/^  uint8_t pad0[4];$/;"	m	struct:__anon13
+pad1	include/sys/ahci.h	/^  uint8_t pad1[12];$/;"	m	struct:__anon13
+pad2	include/sys/ahci.h	/^  uint8_t pad2[4];$/;"	m	struct:__anon13
+pi	include/sys/ahci.h	/^  uint32_t pi;               \/\/ 0x0C, Port implemented$/;"	m	struct:__anon16
+pid_t	include/sys/defs.h	/^typedef uint32_t pid_t;$/;"	t
+pmp	include/sys/ahci.h	/^  uint8_t pmp:4;             \/\/ Port multiplier port$/;"	m	struct:__anon12
+pmport	include/sys/ahci.h	/^  uint8_t pmport:4;          \/\/ Port multiplier$/;"	m	struct:__anon4
+pmport	include/sys/ahci.h	/^  uint8_t pmport:4;          \/\/ Port multiplier$/;"	m	struct:__anon5
+pmport	include/sys/ahci.h	/^  uint8_t pmport:4;          \/\/ Port multiplier$/;"	m	struct:__anon6
+pmport	include/sys/ahci.h	/^  uint8_t pmport:4;          \/\/ Port multiplier$/;"	m	struct:__anon7
+pmport	include/sys/ahci.h	/^  uint8_t pmport:4;          \/\/ Port multiplier$/;"	m	struct:__anon8
+pmport	include/sys/ahci.h	/^  uint8_t pmport:4;          \/\/ Port multiplier$/;"	m	struct:__anon9
+ports	include/sys/ahci.h	/^  hba_port_t ports[MAX_PORT_CNT]; \/\/ 1 ~ 32$/;"	m	struct:__anon16
+posix_header_ustar	include/sys/tarfs.h	/^struct posix_header_ustar {$/;"	s
+prdbc	include/sys/ahci.h	/^  volatile uint32_t prdbc;   \/\/ Physical region descriptor byte count transferred$/;"	m	struct:__anon12
+prdt_entry	include/sys/ahci.h	/^  hba_prdt_entry_t prdt_entry[1]; \/\/ Physical region descriptor table entries, 0 ~ 65535$/;"	m	struct:__anon11
+prdtl	include/sys/ahci.h	/^  uint16_t prdtl;            \/\/ Physical region descriptor table length in entries$/;"	m	struct:__anon12
+prefix	include/sys/tarfs.h	/^  char prefix[155];$/;"	m	struct:posix_header_ustar
+protocol	include/sys/ahci.h	/^  uint32_t protocol;         \/\/ protocol specific$/;"	m	struct:__anon6
+ps1_variable	bin/sbush/sbush.c	/^char ps1_variable[256] = "sbush>";$/;"	v
+psfis	include/sys/ahci.h	/^  fis_pio_setup_t psfis;     \/\/ PIO Setup FIS$/;"	m	struct:__anon13
+putchar	libc/putchar.c	/^int putchar(int c)$/;"	f
+puts	libc/puts.c	/^int puts(const char *s)$/;"	f
+r	include/sys/ahci.h	/^  uint8_t r:1;               \/\/ Reset$/;"	m	struct:__anon12
+read_from_file	bin/sbush/sbush.c	/^void read_from_file(int num_tokens, char *cmd_tokens[]) {$/;"	f
+read_from_stdin	bin/sbush/sbush.c	/^void read_from_stdin() {$/;"	f
+reserved_0	sys/gdt.c	/^  uint32_t reserved_0;$/;"	m	struct:tss_t	file:
+reserved_1	sys/gdt.c	/^  uint64_t reserved_1;$/;"	m	struct:tss_t	file:
+reserved_2	sys/gdt.c	/^  uint64_t reserved_2;$/;"	m	struct:tss_t	file:
+reserved_3	sys/gdt.c	/^  uint16_t reserved_3;$/;"	m	struct:tss_t	file:
+rfis	include/sys/ahci.h	/^  fis_reg_d2h_t rfis;        \/\/ Register - Device to Host FIS$/;"	m	struct:__anon13
+rsp0	sys/gdt.c	/^  void *rsp0;$/;"	m	struct:tss_t	file:
+rsp1	sys/gdt.c	/^  void *rsp1;$/;"	m	struct:tss_t	file:
+rsp2	sys/gdt.c	/^  void *rsp2;$/;"	m	struct:tss_t	file:
+rsv	include/sys/ahci.h	/^  uint8_t rsv[0xA0 - 0x2C];$/;"	m	struct:__anon16
+rsv	include/sys/ahci.h	/^  uint8_t rsv[48];           \/\/ Reserved$/;"	m	struct:__anon11
+rsv	include/sys/ahci.h	/^  uint8_t rsv[96];$/;"	m	struct:__anon13
+rsv0	include/sys/ahci.h	/^  uint32_t rsv0;             \/\/ 0x1C, Reserved$/;"	m	struct:__anon15
+rsv0	include/sys/ahci.h	/^  uint32_t rsv0;             \/\/ Reserved$/;"	m	struct:__anon10
+rsv0	include/sys/ahci.h	/^  uint8_t rsv0:1;            \/\/ Reserved$/;"	m	struct:__anon12
+rsv0	include/sys/ahci.h	/^  uint8_t rsv0:1;            \/\/ Reserved$/;"	m	struct:__anon7
+rsv0	include/sys/ahci.h	/^  uint8_t rsv0:1;            \/\/ Reserved$/;"	m	struct:__anon8
+rsv0	include/sys/ahci.h	/^  uint8_t rsv0:2;            \/\/ Reserved$/;"	m	struct:__anon5
+rsv0	include/sys/ahci.h	/^  uint8_t rsv0:2;            \/\/ Reserved$/;"	m	struct:__anon6
+rsv0	include/sys/ahci.h	/^  uint8_t rsv0:3;            \/\/ Reserved$/;"	m	struct:__anon4
+rsv0	include/sys/ahci.h	/^  uint8_t rsv0:4;            \/\/ Reserved$/;"	m	struct:__anon9
+rsv1	include/sys/ahci.h	/^  uint32_t rsv1:9;           \/\/ Reserved$/;"	m	struct:__anon10
+rsv1	include/sys/ahci.h	/^  uint32_t rsv1;             \/\/ More reserved$/;"	m	struct:__anon7
+rsv1	include/sys/ahci.h	/^  uint32_t rsv1[11];         \/\/ 0x44 ~ 0x6F, Reserved$/;"	m	struct:__anon15
+rsv1	include/sys/ahci.h	/^  uint32_t rsv1[4];          \/\/ Reserved$/;"	m	struct:__anon12
+rsv1	include/sys/ahci.h	/^  uint8_t rsv1:1;            \/\/ Reserved$/;"	m	struct:__anon5
+rsv1	include/sys/ahci.h	/^  uint8_t rsv1:1;            \/\/ Reserved$/;"	m	struct:__anon6
+rsv1	include/sys/ahci.h	/^  uint8_t rsv1:1;$/;"	m	struct:__anon8
+rsv1	include/sys/ahci.h	/^  uint8_t rsv1[2];           \/\/ Reserved$/;"	m	struct:__anon4
+rsv1	include/sys/ahci.h	/^  uint8_t rsv1[2];           \/\/ Reserved$/;"	m	struct:__anon9
+rsv2	include/sys/ahci.h	/^  uint32_t rsv2;             \/\/ Reserved$/;"	m	struct:__anon7
+rsv2	include/sys/ahci.h	/^  uint8_t rsv2:1;$/;"	m	struct:__anon6
+rsv2	include/sys/ahci.h	/^  uint8_t rsv2;              \/\/ Reserved$/;"	m	struct:__anon5
+rsv2	include/sys/ahci.h	/^  uint8_t rsv2;              \/\/ Reserved$/;"	m	struct:__anon8
+rsv3	include/sys/ahci.h	/^  uint8_t rsv3;              \/\/ Reserved$/;"	m	struct:__anon8
+rsv3	include/sys/ahci.h	/^  uint8_t rsv3[2];           \/\/ Reserved$/;"	m	struct:__anon5
+rsv4	include/sys/ahci.h	/^  uint8_t rsv4[2];           \/\/ Reserved$/;"	m	struct:__anon8
+rsv4	include/sys/ahci.h	/^  uint8_t rsv4[4];           \/\/ Reserved$/;"	m	struct:__anon5
+rsved	include/sys/ahci.h	/^  uint8_t rsved[2];          \/\/ Reserved$/;"	m	struct:__anon7
+sact	include/sys/ahci.h	/^  uint32_t sact;             \/\/ 0x34, SATA active (SCR3:SActive)$/;"	m	struct:__anon15
+sctl	include/sys/ahci.h	/^  uint32_t sctl;             \/\/ 0x2C, SATA control (SCR2:SControl)$/;"	m	struct:__anon15
+sd_dpl	sys/gdt.c	/^  uint64_t sd_dpl :2; \/* segment descriptor priority level *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_gran	sys/gdt.c	/^  uint64_t sd_gran :1; \/* limit granularity (byte\/page) *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_hibase	sys/gdt.c	/^  uint64_t sd_hibase :40; \/* segment base address (msb) *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_hilimit	sys/gdt.c	/^  uint64_t sd_hilimit :4; \/* segment extent (msb) *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_lobase	sys/gdt.c	/^  uint64_t sd_lobase :24; \/* segment base address (lsb) *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_lolimit	sys/gdt.c	/^  uint64_t sd_lolimit :16;\/* segment extent (lsb) *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_p	sys/gdt.c	/^  uint64_t sd_p :1; \/* segment descriptor present *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_type	sys/gdt.c	/^  uint64_t sd_type :5; \/* segment type *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_xx1	sys/gdt.c	/^  uint64_t sd_xx1 :3; \/* avl, long and def32 (not used) *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_xx2	sys/gdt.c	/^  uint64_t sd_xx2 :8; \/* reserved *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_xx3	sys/gdt.c	/^  uint64_t sd_xx3 :19; \/* reserved *\/$/;"	m	struct:sys_segment_descriptor	file:
+sd_zero	sys/gdt.c	/^  uint64_t sd_zero :5; \/* must be zero *\/$/;"	m	struct:sys_segment_descriptor	file:
+sdbfis	include/sys/ahci.h	/^  fis_dev_bits_t sdbfis;     \/\/ Set Device Bit FIS$/;"	m	struct:__anon13
+serr_rwc	include/sys/ahci.h	/^  uint32_t serr_rwc;         \/\/ 0x30, SATA error (SCR1:SError)$/;"	m	struct:__anon15
+set_tss_rsp	sys/gdt.c	/^void set_tss_rsp(void *rsp) {$/;"	f
+sig	include/sys/ahci.h	/^  uint32_t sig;              \/\/ 0x24, signature$/;"	m	struct:__anon15
+sighandler_t	include/signal.h	/^typedef void (*sighandler_t)(int);$/;"	t
+size	include/sys/tarfs.h	/^  char size[12];$/;"	m	struct:posix_header_ustar
+size	sys/gdt.c	/^  uint16_t size;$/;"	m	struct:gdtr_t	file:
+size_t	include/sys/defs.h	/^typedef uint64_t size_t;$/;"	t
+sntf_rwc	include/sys/ahci.h	/^  uint32_t sntf_rwc;         \/\/ 0x3C, SATA notification (SCR4:SNotification)$/;"	m	struct:__anon15
+spawn_proc	bin/sbush/sbush.c	/^int spawn_proc(int in, int out, struct command *cmd)$/;"	f
+ssize_t	include/sys/defs.h	/^typedef int64_t ssize_t;$/;"	t
+ssts	include/sys/ahci.h	/^  uint32_t ssts;             \/\/ 0x28, SATA status (SCR0:SStatus)$/;"	m	struct:__anon15
+start	sys/main.c	/^void start(uint32_t *modulep, void *physbase, void *physfree)$/;"	f
+status	include/sys/ahci.h	/^  uint8_t status;            \/\/ Status register$/;"	m	struct:__anon5
+status	include/sys/ahci.h	/^  uint8_t status;            \/\/ Status register$/;"	m	struct:__anon8
+statush	include/sys/ahci.h	/^  uint8_t statush:3;$/;"	m	struct:__anon6
+statusl	include/sys/ahci.h	/^  uint8_t statusl:3;$/;"	m	struct:__anon6
+sys_segment_descriptor	sys/gdt.c	/^struct sys_segment_descriptor {$/;"	s	file:
+tfd	include/sys/ahci.h	/^  uint32_t tfd;              \/\/ 0x20, task file data$/;"	m	struct:__anon15
+tokenize	bin/sbush/sbush.c	/^int tokenize(char *arg, char *argv[], int max_tokens, char *sep) {$/;"	f
+trans_count	include/sys/ahci.h	/^  uint16_t trans_count;      \/\/ Transfer count$/;"	m	struct:__anon8
+trans_count	include/sys/ahci.h	/^  uint32_t trans_count;      \/\/ Number of bytes to transfer. Bit 0 must be 0$/;"	m	struct:__anon7
+tss	sys/gdt.c	/^static struct tss_t tss;$/;"	v	typeref:struct:tss_t	file:
+tss_t	sys/gdt.c	/^struct tss_t {$/;"	s	file:
+typeflag	include/sys/tarfs.h	/^  char typeflag[1];$/;"	m	struct:posix_header_ustar
+ufis	include/sys/ahci.h	/^  uint8_t ufis[64];$/;"	m	struct:__anon13
+uid	include/sys/tarfs.h	/^  char uid[8];$/;"	m	struct:posix_header_ustar
+uint16_t	include/sys/defs.h	/^typedef unsigned short uint16_t;$/;"	t
+uint16_t	include/sys/elf64.h	/^typedef Elf64_Half   uint16_t;$/;"	t
+uint32_t	include/sys/defs.h	/^typedef unsigned int   uint32_t;$/;"	t
+uint32_t	include/sys/elf64.h	/^typedef Elf64_Sword  uint32_t;$/;"	t
+uint32_t	include/sys/elf64.h	/^typedef Elf64_Word   uint32_t;$/;"	t
+uint64_t	include/sys/defs.h	/^typedef unsigned long  uint64_t;$/;"	t
+uint64_t	include/sys/elf64.h	/^typedef Elf64_Addr   uint64_t;$/;"	t
+uint64_t	include/sys/elf64.h	/^typedef Elf64_Lword  uint64_t;$/;"	t
+uint64_t	include/sys/elf64.h	/^typedef Elf64_Off    uint64_t;$/;"	t
+uint64_t	include/sys/elf64.h	/^typedef Elf64_Sxword uint64_t;$/;"	t
+uint64_t	include/sys/elf64.h	/^typedef Elf64_Xword  uint64_t;$/;"	t
+uint8_t	include/sys/defs.h	/^typedef unsigned char   uint8_t;$/;"	t
+uname	include/sys/tarfs.h	/^  char uname[32];$/;"	m	struct:posix_header_ustar
+va_arg	include/stdarg.h	5;"	d
+va_copy	include/stdarg.h	7;"	d
+va_end	include/stdarg.h	6;"	d
+va_list	include/stdarg.h	/^typedef __builtin_va_list va_list;$/;"	t
+va_start	include/stdarg.h	4;"	d
+vendor	include/sys/ahci.h	/^  uint32_t vendor[4];        \/\/ 0x70 ~ 0x7F, vendor specific$/;"	m	struct:__anon15
+vendor	include/sys/ahci.h	/^  uint8_t vendor[0x100 - 0xA0];$/;"	m	struct:__anon16
+version	include/sys/tarfs.h	/^  char version[2];$/;"	m	struct:posix_header_ustar
+vs	include/sys/ahci.h	/^  uint32_t vs;               \/\/ 0x10, Version$/;"	m	struct:__anon16
+w	include/sys/ahci.h	/^  uint8_t w:1;               \/\/ Write, 1: H2D, 0: D2H$/;"	m	struct:__anon12
