@@ -5,5 +5,6 @@
 
 void display_time(int secs);
 void print_timer();
+int get_time_since_up();
 
 #endif

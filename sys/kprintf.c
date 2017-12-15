@@ -3,14 +3,14 @@
 #include <stdarg.h>
 
 void display(const char *fmt) {
-  static int row = 1;
+  static int row = 2;
   static int col = 1;
   char *c;
-  static char *temp = (char *)VIDEO_VIRT_MEM_BEGIN;
+  static char *temp = (char *)VIDEO_VIRT_MEM_BEGIN + 160;
 
   for (c = (char *)fmt; *c; c += 1, temp += CHAR_WIDTH) {
     if (row > 17) {
-      memcpy((char *)VIDEO_VIRT_MEM_BEGIN, (char *)VIDEO_VIRT_MEM_BEGIN + SCREEN_WIDTH, 2660);
+      memcpy((char *)VIDEO_VIRT_MEM_BEGIN + 160, (char *)VIDEO_VIRT_MEM_BEGIN + 160 + SCREEN_WIDTH, 2500);
       temp -= SCREEN_WIDTH;
       clear_chars(temp, SCREEN_WIDTH);
       row = 17;

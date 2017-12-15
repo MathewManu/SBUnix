@@ -1,6 +1,13 @@
 #include <sys/timer.h>
 #include <sys/kprintf.h>
 #include <sys/utils.h>
+#include <sys/task.h>
+
+int time_since_up;
+
+int get_time_since_up() {
+  return time_since_up;
+}
 
 void display_time(int secs) {
   int buff_len = 0;
@@ -26,7 +33,9 @@ void print_timer() {
 
   if (count == 18) {
     sec += 1;
+    time_since_up = sec;
     display_time(sec);
+	//yield();
     count = 0;
   }
 }

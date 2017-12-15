@@ -2,6 +2,7 @@
 #define _TARFS_H
 
 #include <sys/elf64.h>
+#include <sys/dirent.h>
 
 #define ASCII_TO_NUM(num) (num - 48)
 
@@ -28,7 +29,10 @@ struct posix_header_ustar {
   char pad[12];
 };
 
+file_t *get_tarfs_tree();
+file_t *find_node(char *name);
 void browse_tarfs();
+void init_tarfs_tree();
 Elf64_Ehdr *get_elf_header(char *bin_filename);
 
 #endif

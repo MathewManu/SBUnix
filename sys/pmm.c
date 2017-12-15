@@ -206,7 +206,7 @@ void init_pmm(uint32_t *modulep, void *physbase, void *physfree) {
   for(smap = (struct smap_t*)(modulep+2); smap < (struct smap_t*)((char*)modulep+modulep[1]+2*4); ++smap) {
     if (smap->type == 1 /* memory */ && smap->length != 0) {
 		  i++;	
-      kprintf("Available Physical Memory [%p - %p]\n", smap->base, smap->base + smap->length);
+      //kprintf("Available Physical Memory [%p - %p]\n", smap->base, smap->base + smap->length);
       update_phys_blocks(smap->base, smap->base + smap->length);
       phys_mem_end = smap->base + smap->length;
     }

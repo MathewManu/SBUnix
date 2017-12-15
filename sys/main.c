@@ -37,12 +37,10 @@ void start(uint32_t *modulep, void *physbase, void *physfree)
   init_pmm(modulep, physbase, physfree);
   init_paging(0, (uint64_t)physfree);
 
-  kprintf("physfree %p\n", (uint64_t)physfree);
-  kprintf("physbase %p\n", (uint64_t)physbase);
-  kprintf("tarfs in [%p - %p]\n", &_binary_tarfs_start, &_binary_tarfs_end);
+  //kprintf("physfree %p\n", (uint64_t)physfree);
+  //kprintf("physbase %p\n", (uint64_t)physbase);
+  //kprintf("tarfs in [%p - %p]\n", &_binary_tarfs_start, &_binary_tarfs_end);
 
-  /* TODO : Remove this in the end, this is just for POC */
-  browse_tarfs();
 
   init_idt();
   pic_offset_init(0x20,0x28);
@@ -56,16 +54,19 @@ void start(uint32_t *modulep, void *physbase, void *physfree)
   checkAllBuses();  
 #endif
 
+  /* Parse and construct tree from tarfs contents */
+  init_tarfs_tree();
+
+  /* Initialize terminal */
   init_terminal();
 
   /* setting up syscall & related functions */
   init_syscall();
 
-  /* TODO : context switching.. */
   init_tasking();
 
-  execute_user_process("bin/helloworld");
-  //execute_user_process("bin/sbush");
+  start_init_process();
+  start_sbush_process("bin/sbush");
 
 	doIt();
 
@@ -83,6 +84,26 @@ void boot(void)
   }
 
   /* Seperation Indication */ 
+  /*
+  for(temp1=(char *)VIDEO_VIRT_MEM_BEGIN+160*0; temp1 < (char*)VIDEO_VIRT_MEM_BEGIN+160*1; temp1 += 2) {
+	*temp1 ='=';
+  }
+  */
+
+  for(temp1=(char *)VIDEO_VIRT_MEM_BEGIN+160*0; temp1 < (char*)VIDEO_VIRT_MEM_BEGIN+160*1; temp1 += 2) {
+	*temp1 ='=';
+  }
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 68) = ' ';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 70) = '[';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 72) = 'S';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 74) = 'B';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 76) = 'U';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 78) = 'n';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 80) = 'i';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 82) = 'x';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 84) = ']';
+  *(char *)(VIDEO_VIRT_MEM_BEGIN+160*0 + 86) = ' ';
+
   for(temp1=(char *)VIDEO_VIRT_MEM_BEGIN+160*17; temp1 < (char*)VIDEO_VIRT_MEM_BEGIN+160*18; temp1 += 2) {
 	*temp1 ='=';
   }

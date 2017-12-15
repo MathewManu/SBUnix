@@ -14,7 +14,10 @@ switchring3:
      pushq $0x23
 
      # 2) Pushing RSP
-     pushq %rax
+     #pushq %rax
+
+     #trying to push user stack addrress.
+     pushq %rcx
 
      # 3) Pushing Flags
      pushf 

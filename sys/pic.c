@@ -58,8 +58,8 @@ void pic_offset_init(int offset1, int offset2) {
 	outb(PIC1_DATA, m1); 
 	outb(PIC2_DATA, m2);
 
-///	mask_pins(0);
-//	mask_pins(1);
+	//mask_pins(0);
+	//mask_pins(1);
 	mask_pins(2);
 	mask_pins(3);
 	mask_pins(4);

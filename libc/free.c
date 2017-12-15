@@ -1,8 +1,7 @@
-#include<stdlib.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 void free(void *mem_ptr) {
-  if (mem_ptr) {
-    munmap((void *)mem_ptr, *((int *)mem_ptr - 1));
-  }
+  syscall(__NR_free, mem_ptr);
 }
 

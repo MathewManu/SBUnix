@@ -22,9 +22,8 @@
 #define BYTE	                  uint8_t
 #define TRUE	                  1
 #define FALSE	                  0
-#define ABAR_BASE               0xFFFFFFFF802DD000
-//#define ABAR_BASE               0xFFFFFFFF800A6000 
-//#define ABAR_BASE               0xA6000
+
+#define ABAR_BASE               0xA6000
 #define AHCI_BASE               0x400000    
 #define BUFF                    0x900000    
 
@@ -53,7 +52,7 @@ static inline uint32_t sysInLong(uint16_t port) {
 }
 
 void pciConfigWriteWord (uint8_t bus, uint8_t slot,
-    uint8_t func, uint8_t offset, uint64_t newVal) {
+    uint8_t func, uint8_t offset, uint32_t newVal) {
 
   uint32_t address;
 
@@ -191,16 +190,13 @@ void checkDevice(uint8_t bus, uint8_t device) {
  */
 uint64_t get_ahci_bar_address(uint8_t bus, uint8_t slot, uint8_t func) {
 
-  uint64_t abar;
   uint32_t abar5_1, abar5_2;
 
   abar5_1 = (uint32_t)pciConfigReadWord(bus, slot, func, 0x24);
   abar5_2 = (uint32_t)pciConfigReadWord(bus, slot, func, 0x26);
 
   /* Forming actual base address of AHCI BAR  */
-  abar = (uint64_t)((abar5_2 << 16 | abar5_1 ) & (uint32_t)(0xFFFFFFF0));
-  abar |= 0xFFFFFFFF00000000;
-  return abar;
+  return (uint64_t)((abar5_2 << 16 | abar5_1 ) & (uint32_t)(0xFFFFFFF0));
 }
 
 uint16_t find_ahci_drive(uint8_t bus, uint8_t slot, uint8_t func) {
@@ -226,7 +222,7 @@ uint16_t find_ahci_drive(uint8_t bus, uint8_t slot, uint8_t func) {
       pciConfigWriteWord(bus, slot, func, 0x24, ABAR_BASE);
       ahci_bar = get_ahci_bar_address(bus, slot, func);
 
-       kprintf("BAR is : %x\n", ahci_bar); 
+      /* kprintf("BAR is : %x\n", ahci_bar); */
       check_ahci_device((hba_mem_t *)ahci_bar);
     }
   }
@@ -251,7 +247,6 @@ void check_ahci_device(hba_mem_t *abar) {
   /* Search disk in implemented ports */
   int i = 0;
   uint32_t pi = abar->pi;
-  kprintf("pi is... %x\n", *abar);
   while (i < 32) {
 
     if (pi & 1) {

@@ -1,10 +1,20 @@
 #include <sys/utils.h>
+#include <sys/defs.h>
 
 int strlen(char *str) {
   int i;
   for (i = 0; *str != '\0'; str++)
     i++;
   return i;
+}
+
+char *strcpy(char *dest, char *src) {
+  int i;
+  for (i=0; src[i] != '\0'; i++) {
+    dest[i] = src[i];
+  }
+  dest[i] = '\0';
+  return dest;
 }
 
 char *strncpy(char *dest, char *src, int len) {
@@ -44,6 +54,11 @@ void memcpy(void *dest, const void *src, int n) {
 
 /* number base converter, int to oct, hex etc */
 void convert(char *a, unsigned long n, int base, int i) {
+  if (n == 0 && i == 0) {
+    a[i] = 48;
+    return;
+  }
+
   int rem = n % base;
   if (n == 0)
     return;
@@ -106,3 +121,49 @@ int strncmp (const char *f_str, const char *s_str, int n) {
   return 0;
 }
 
+char *strchr(char *s, int c)
+{
+    char* ret=0;
+    do {
+        if( *s == (char)c )
+            ret=s;
+    } while(*s++);
+    return ret;
+}
+
+size_t strspn(char *s1, char *s2)
+{
+    size_t ret=0;
+    while(*s1 && strchr(s2,*s1++))
+        ret++;
+    return ret;
+}
+
+size_t strcspn(char *s1, char *s2)
+{
+    size_t ret=0;
+    while(*s1)
+        if(strchr(s2,*s1))
+            return ret;
+        else
+            s1++,ret++;
+    return ret;
+}
+
+char *strtok_r(char *str, char *delim, char **nextp) {
+  char *ret;
+  if (str == NULL)
+    str = *nextp;
+
+  str += strspn(str, delim);
+  if (*str == '\0')
+    return NULL;
+
+  ret = str;
+  str += strcspn(str, delim);
+  if (*str)
+    *str++ = '\0';
+
+  *nextp = str;
+  return ret;
+}

@@ -144,12 +144,13 @@ void key_handler() {
 }
 
 void display_glyph(unsigned char glyph, int flags) {
+#if 0
   unsigned char sbuff[6] = {0};
   unsigned char *c;
   int i = 0;
   char *temp = (char *)VIDEO_VIRT_MEM_BEGIN + SCREEN_WIDTH * SCREEN_HEIGHT - 10;
   clear_chars(temp, 10);
-  
+
   sbuff[0] = '[';
 
   if (flags == KEYCODE_CTRL)
@@ -164,6 +165,7 @@ void display_glyph(unsigned char glyph, int flags) {
   for (c = sbuff; i < 5; c += 1, i++, temp += CHAR_WIDTH) {
       *temp = *c;
   }
+#endif
 
   handle_keyboard_input(glyph, flags);
 }

@@ -6,7 +6,8 @@ _isr_kb:
 
 .global _isr_timer1
 _isr_timer1:
-  call send_EOI
+#  call send_EOI
+  cli
   pushq %rax
   pushq %rcx
   pushq %rdx
@@ -29,6 +30,7 @@ _isr_timer1:
   popq %rdx
   popq %rcx
   popq %rax
+  sti
   iretq
 
 .global _isr_sys_def0
@@ -98,21 +100,47 @@ _isr_sys_def12:
 
 .global _isr_sys_def13
 _isr_sys_def13:
-   xor %rcx, %rcx
-    xor %rax, %rax
-    mov $0xC0000082, %rcx
-    rdmsr
-
   call send_EOI
   iretq
 
 .global _isr_sys_def14
 _isr_sys_def14:
-   xor %rcx, %rcx
-    xor %rax, %rax
-    mov $0xC0000082, %rcx
-    rdmsr
-  call send_EOI
+  cli
+  pushq %rax
+  pushq %rbx
+  pushq %rcx
+  pushq %rdx
+  pushq %rbp
+  pushq %rsi
+  pushq %rdi
+  pushq %r8
+  pushq %r9
+  pushq %r10
+  pushq %r11
+  pushq %r12
+  pushq %r13
+  pushq %r14
+  pushq %r15
+  movq 120(%rsp), %rdi
+  call page_fault_handler
+#  call send_EOI
+  popq %r15
+  popq %r14
+  popq %r13
+  popq %r12
+  popq %r11
+  popq %r10
+  popq %r9
+  popq %r8
+  popq %rdi
+  popq %rsi
+  popq %rbp
+  popq %rdx
+  popq %rcx
+  popq %rbx
+  popq %rax
+  add $8, %rsp
+  sti
   iretq
 
 .global _isr_sys_def15
