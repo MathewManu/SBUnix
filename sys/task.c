@@ -26,17 +26,27 @@ char task_state_str[][32] = {"UNKNOWN",
                             };
 /* Allocate an available process id */
 uint32_t allocate_pid() {
-  uint16_t pid_index = 1;
+  static uint16_t pid_index = 3;
+  uint16_t ret_pid = INVALID_PID;
+
   while (pid_index < MAX_NUM_PROCESSES) {
     if (pid[pid_index] == 0) {
       pid[pid_index] = 1;
-      return pid_index;
+      ret_pid = pid_index;
+      pid_index++;
+
+      if ((pid_index % MAX_NUM_PROCESSES) == 0)
+        pid_index = 3;
+
+      break;
     }
 
     pid_index++;
+    if ((pid_index % MAX_NUM_PROCESSES) == 0)
+      pid_index = 3;
   }
 
-  return INVALID_PID;
+  return ret_pid;
 }
 
 void release_pid(uint16_t pid_index) {
@@ -98,6 +108,7 @@ void cleanup_tasks() {
     }
     tmp = tmp->next;
   }
+  //kprintf("rsp [%p]\n", get_current_running_task()->rsp);
   //kprintf("get_num_free_blocks() %d\n", get_num_free_blocks());
   //kprintf("get_num_used_blocks() %d\n", get_num_used_blocks());
 }
@@ -220,7 +231,7 @@ void init_tasking() {
 void create_task(task_struct_t *task, void (*main)()) {
     task->kstack = vmm_alloc_page();
     task->rsp = (uint64_t) (task->kstack + 4016);
-    task->ursp = 0x900000;
+    //task->ursp = 0x900000;
     task->parent_task = NULL;
     strcpy(task->cwd, "rootfs");
 
@@ -318,7 +329,7 @@ void start_init_process() {
   task->cr3 = (uint64_t) pml4;
   
   task->task_state = TASK_STATE_RUNNING;
-  task->pid  = allocate_pid();
+  task->pid  = 1;
   task->ppid = 0;
   task->num_children = 0;
   strcpy(task->name, "init");
@@ -337,7 +348,7 @@ void start_sbush_process(char *bin_filename) {
   task->cr3 = (uint64_t) pml4;
   
   task->task_state = TASK_STATE_RUNNING;
-  task->pid  = allocate_pid();
+  task->pid  = 2;
   task->ppid = 0;
   task->num_children = 0;
   strcpy(task->name, "sbush");

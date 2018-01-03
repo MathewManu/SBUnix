@@ -301,15 +301,18 @@ void sys_kill() {
 
 void sys_sleep() {
 
-  int sleep = syscall_args.rdi;
-  int tot_time = get_time_since_up() + sleep;
-  int curr;
+  volatile int sleep = syscall_args.rdi;
+  //kprintf("value is %d\n", sleep);
+  volatile int tot_time = get_time_since_up() + sleep;
+  //kprintf("tot timei is %d\n", tot_time);
+  volatile int curr;
   while (1) {
     curr = get_time_since_up();	
     if(curr >= tot_time)
-	{
-	break;
-	}
+    {
+    //kprintf("breaking %d\n", curr);
+      break;
+    }
   }
 }
 

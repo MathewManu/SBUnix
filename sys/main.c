@@ -6,7 +6,6 @@
 #include <sys/tarfs.h>
 #include <sys/ahci.h>
 #include <sys/pci.h>
-#include <tcl/tcl.h>
 #include <sys/pmm.h>
 #include <sys/vmm.h>
 #include <sys/task.h>
@@ -22,15 +21,6 @@ phys_block_t phys_blocks[MAX_NUM_PHYS_BLOCKS];
 uint32_t* loader_stack;
 extern char kernmem, physbase;
 
-void tcltest() {
-
-  Tcl_Interp *myinterp;
-  char *cmd = "puts \"Hello World from Tcl!\"";
-
-  kprintf ("Invoking Tcl interpreter ... \n");
-  myinterp = Tcl_CreateInterp();
-  Tcl_Eval(myinterp, cmd, 0, NULL);
-}
 
 void start(uint32_t *modulep, void *physbase, void *physfree)
 {

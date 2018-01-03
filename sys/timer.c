@@ -3,7 +3,9 @@
 #include <sys/utils.h>
 #include <sys/task.h>
 
-int time_since_up;
+int time_since_up=10;
+static int count;
+static int sec;
 
 int get_time_since_up() {
   return time_since_up;
@@ -27,8 +29,6 @@ void display_time(int secs) {
 }
 
 void print_timer() {
-  static int count;
-  static int sec;
   count += 1;
 
   if (count == 18) {

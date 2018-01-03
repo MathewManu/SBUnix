@@ -354,7 +354,6 @@ void page_fault_handler(uint64_t error_code) {
 
   uint64_t faulting_address = get_cr2();
 
-  //kprintf("Page Fault : addr = %p, error_code = 0x%x\n", faulting_address, error_code);
 
 
   if(error_code & PTE_PRESENT && error_code & PTE_WRITABLE) {
@@ -377,6 +376,7 @@ void page_fault_handler(uint64_t error_code) {
 
     }
   }
+  //kprintf("Page Fault : addr = %p, error_code = 0x%x\n", faulting_address, error_code);
   /* autogrow stack */
   int stack_grow = 0;
   vma_struct_t *vma = get_current_running_task()->mm->mmap;
@@ -479,6 +479,7 @@ void create_child_paging(uint64_t child_task_pml4) {
   }
 
   child_pml4->pml4_entries[511] = parent_pml4->pml4_entries[511];
+  //child_pml4->pml4_entries[510] = parent_pml4->pml4_entries[510];
 }
 
 void cleanup_page_table(pml4_t *pml4) {
