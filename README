@@ -23,6 +23,7 @@ gdb ./kernel
 At the (gdb) prompt, connect with:
 target remote localhost:9999
 =====================================================================================================
+=====================================================================================================
 Course page : https://compas.cs.stonybrook.edu/courses/cse506-operating-systems-fall-17/cse506-project-hints/
 
 References:
@@ -32,10 +33,4 @@ http://www.jamesmolloy.co.uk/tutorial_html/10.-User%20Mode.html
 http://www.osdever.net/bkerndev/Docs/keyboard.htm
 http://duartes.org/gustavo/blog/post/how-the-kernel-manages-your-memory/
 http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/
-http://www.felixcloutier.com/x86/SYSCALL.html
-http://wiki.osdev.org/Sysenter#AMD:_SYSCALL.2FSYSRET
-http://wiki.osdev.org/Page_Frame_Allocation Hybrid scheme 2
-https://xem.github.io/minix86/manual/intel-x86-and-64-manual-vol3/o_fe12b1e2a880e0ce-174.html
-https://github.com/torvalds/linux/blob/ead751507de86d90fa250431e9990a8b881f713c/arch/x86/include/asm/msr.h
-https://xem.github.io/minix86/manual/intel-x86-and-64-manual-vol3/o_fe12b1e2a880e0ce-174.html
 
