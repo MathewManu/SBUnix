@@ -1,3 +1,4 @@
+
 * The provided Makefile:
   1) builds a kernel
   2) copies it into rootfs/boot/kernel/kernel
@@ -21,3 +22,15 @@ gdb ./kernel
 
 At the (gdb) prompt, connect with:
 target remote localhost:9999
+=====================================================================================================
+=====================================================================================================
+Course page : https://compas.cs.stonybrook.edu/courses/cse506-operating-systems-fall-17/cse506-project-hints/
+
+References:
+http://wiki.osdev.org
+http://www.brokenthorn.com/Resources/OSDevIndex.html
+http://www.jamesmolloy.co.uk/tutorial_html/10.-User%20Mode.html
+http://www.osdever.net/bkerndev/Docs/keyboard.htm
+http://duartes.org/gustavo/blog/post/how-the-kernel-manages-your-memory/
+http://duartes.org/gustavo/blog/post/anatomy-of-a-program-in-memory/
+
